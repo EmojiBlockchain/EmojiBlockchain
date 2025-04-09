@@ -1,0 +1,157 @@
+{
+    "@Presale": {
+        "private_key": "2e1c9b2238185fc2c41d74ff71b144bac41668076048342bbeccfe99b660b836",
+        "public_key": "01b8e409c081110770d6554fabd73980fbab4c8be152a6b422698551381e954efce677d6441f36e897080299905883f45351194979c95768813b4af5b2ebb05e",
+        "address": "4ad5722f3bc29ead241435b81def87ad6367f63817f96cc99fd366c178c2f6fd",
+        "balance": "3000000000\ud83d\udd25",
+        "stake": 0
+    },
+    "@Liquidity1": {
+        "private_key": "a67f45470da943688654f4e88755c74e549a7c60234fc79d5fbb6b83de49a202",
+        "public_key": "fcbbf48ddb67688c0b5a9c1de9471dee0c6b823fa561723bc152eff0e58f30fd848489859498d6bdd6f191bedcdcb1c55638ad6ab196b5a918655941ba17af11",
+        "address": "f4f45b8b22b0dc12d34d28cf53f48a69a3511187e9bfbae536040c72ce9a4061",
+        "balance": "2000000000\ud83d\udd25",
+        "stake": 0
+    },
+    "@Liquidity2": {
+        "private_key": "00d560b2f54e739e17f5b4ad143b6561925dbe0a9145c3bfcec447b3194ac991",
+        "public_key": "1f205bb27b8f1b86667d47fb7e979f3d1f0a7731ff539f6c8409d2ebfca0f1df46d2b6b7dda3c7f1f699df3825d189bf98e2d450f26f76ecb36e60854cd6298e",
+        "address": "fd7cfec960a348fcfd8dec51ce517ed99bcbf25931ca89c149ef20493a3273f7",
+        "balance": "2000000000\ud83d\udd25",
+        "stake": 0
+    },
+    "@Ecosystem": {
+        "private_key": "ba90a7faec001b1f85b555a24518d25d94e66bb12ba07d18679c82e77d314b69",
+        "public_key": "ba366b8c55dfaaffb36414117d9c571ace4d10d7765a54f936715358d5547109b456f87c90c1ce5027cd2ad94872cb9b04a1fc98e3093446703d51b3eb70499c",
+        "address": "2a54efe73e2b6556db3818b6a6e332f689f6c8b49397215e4f26aef500ad3256",
+        "balance": "1000000000\ud83d\udd25",
+        "stake": 0
+    },
+    "@Team": {
+        "private_key": "f17b698bf6cd49afa6f8ce346d43f73e581f979e21721386902f0a7501344f6b",
+        "public_key": "5638037c8cf169f198370041849ddf427d94545037631786f4297e0a1cc9ffaea75a016267557ce2e7830521a37bb672e5059fbc2cb7449cb0c1b8e251a459ea",
+        "address": "ca7885460ace00bcbe2451eef8df69f9c32b87022c0425b6f6a23aa60a82e605",
+        "balance": "800000000\ud83d\udd25",
+        "stake": 0
+    },
+    "@Marketing": {
+        "private_key": "5df6740bee313424f1c0f89485851c4c2ed2fac955d55b83f2d242710b0731a8",
+        "public_key": "aed9522bea0f028fd24b764a7dcf43bfbf56d37ba6a83f3426fbfe6be2ab84ad6d367834d60f2a4cc78ef2803b682ca8f187bd53995e8ea2bca4e2966b06314d",
+        "address": "a0f323e09eae3b44fb2f320f75223d2e6031724365d81bc91749e1df870cc368",
+        "balance": "700000000\ud83d\udd25",
+        "stake": 0
+    },
+    "@Airdrops": {
+        "private_key": "89adb1797c4b206b526f61e91ef3c2cdf116ffb3b634ed452da6b1eb5ac29cc0",
+        "public_key": "c155fb4c1adc7e0275dd225787085cdbd1ee0dcd17f32623c2976c3345ca2e27572dfa4c16e07ea5e1699d08af6c75a338d559538074e631cb078e9b7f5f39e7",
+        "address": "8d917e080eb102339bcfcad8c408d33f327f1c64e4caf71a1ba38a418d85a975",
+        "balance": "499997217.0\ud83d\udd25",
+        "stake": 1000.0,
+        "stake_timestamp": 1743081706.762768
+    },
+    "@Charlie": {
+        "private_key": "ccd26a72463ff481d41544123fe58ce7595e11fc2837f2aa13009c12748fc51d",
+        "public_key": "f6c02920c470c04c690d6a846aec8377d8458815f72853739c9765eca4673a0e24b135c59698fd19ee9ab9b17225d9023be55510c59736c481365f64bffa9ed3",
+        "address": "107b9b34d30d63c0a28522b7eddbb0e0569e5639f38f09b3ac6845e4bdefdf1d",
+        "balance": "198.0\ud83d\udd25",
+        "stake": 0
+    },
+    "@Alice": {
+        "private_key": "182a6972af9a06b8af9ec8e4d1d8a679be944f289bb9caeac953cd71afc69b5a",
+        "public_key": "a8aa3fba24e801e5d4321c4a4af69903125d6b040a6955c60e12372d30f70050868484661ded9be380d17345bf382b7c1ed3009c9e00e941edbc0c04f3196f7c",
+        "address": "475fe8e8e25f1cc6100794592e56313de2a927519f3837a174bc39d3da1a3ff3",
+        "balance": "546.0\ud83d\udd25",
+        "stake": 0
+    },
+    "@Bob": {
+        "private_key": "a63eb071380f82d54a220032a3a6fb7434d19399624e804f05965d41897ab481",
+        "public_key": "eea06c2149756a7f2b16976bb327aa10d2158a97f4323f8b68847283af73b112c95bfe00eb2f46029e78ac36c7a406dd80e729ef179df6041401e1ea5c50424f",
+        "address": "82460fc447d804e0b226251a4c04104c68cf62fde957e01e0d53c2b9656481c5",
+        "balance": "146.0\ud83d\udd25",
+        "stake": 0
+    },
+    "@Satoshi": {
+        "private_key": "7eb62115b2d2b16e57fa244cc895042e650bc776340910c32bd8f9c495e8ab11",
+        "public_key": "df574f29d4a4eb888c7d900a3b94c9fa4ef23f7818f67548de3884ba4cd0b612dd9f486a1ba7462a5622d28896e33d0e50755cb186f6f170b45140ae0d7d634f",
+        "address": "460daa80ab679cd561dc6c4e19072a48efefdd53587c3487a1dfd3487016d2a5",
+        "balance": "195.0\ud83d\udd25",
+        "stake": 0
+    },
+    "@Patoshi": {
+        "private_key": "6a75085f68f79c10a8620656e5cb8e1a77295e5d964c5953d37526fccb682582",
+        "public_key": "8d5eb171301c8cbb038bfda8d0f16c0639e2ef608ad7055d91446233291660a39abff6545c4d2c520ffedf52b69b0889da49e0bee1d148ea763176edeaf7462d",
+        "address": "758343fe5fabb2bf0e6e8b2c70edbc0f668d45b0db74866f384797741c24b66c",
+        "balance": "0\ud83d\udd25",
+        "stake": 0
+    },
+    "@Roy": {
+        "private_key": "708efc3845c90211a924f927004c19a1af28a239ffcdc091bfd5cbc8ecca57e7",
+        "public_key": "48068c48644f12c43349fa2a17ad57df4876c7d91e7d6d6914d2fd528a825f7e1ed0ef6c55aea1da62438c816171ca3b6954b9fa1c3e9c10835ccf3d9168ed82",
+        "address": "d680ec2dc2ecf46077815c8cfa91316101b39875d320299e4850f62b083500b7",
+        "balance": "49.0\ud83d\udd25",
+        "stake": 0
+    },
+    "@Hemu": {
+        "private_key": "2b53b5c31c215c3fdbbad7c22578a39e945ec5be15942e7064c50dcbd7961951",
+        "public_key": "e6aa03e8de9ba30a3378b8d851d107c13e1a7aa30ebc29601e5bb52d462c75bf96025787aabc4f95c8359b68431d8134a3c1655f1728eb92782df58adab2b06870a0",
+        "address": "ccf7563ef32bee3c10e102544fc31ef897fd5d92a8dd42427b8c77d7b7072790",
+        "balance": "50.0\ud83d\udd25",
+        "stake": 0
+    },
+    "Sahil": {
+        "private_key": "52749eb317fdcdbbed4c3320cd8bbcfaff29d3b074ec980efdc045e52ec0e01f",
+        "public_key": "9058769e664cc8429a30e40a95edcedebbd8e06f4c1f0205683f910802e55c06e6018cfd52b788e0c1cef565bafdd5abe807a144d6817f5f91d1d70425d19940b781",
+        "address": "738868e33d5bb325ca143132a7bfbcd57621af2ebca56b4d156ad45e805380de",
+        "balance": "100\ud83d\udd25",
+        "stake": 0
+    },
+    "Hemu": {
+        "private_key": "239384c62974844fe0df25abd44a7c8bf73335d9aebeebf9ec1d0f77c5d4b51e",
+        "public_key": "ca51243e37b616cfe68c69345842069c8aaf1340dc9ea02beef82270ebfc22796a070258c6515ba8e4e90239d79a02502813cb3016655358066d073c1c9642421d6f",
+        "address": "ec4630750b1869e6f9f3b57067f555ea8a872f45814b7be5107314bbc3c0dd1e",
+        "balance": "100\ud83d\udd25",
+        "stake": 0
+    },
+    "Raghav": {
+        "private_key": "00c3c54443c7c69c5322111f090f620cbb715e6b41d428cf0cfef97e0e838852",
+        "public_key": "18f09fa7f66396ca7e74580b260d357ba8d6ff7b45d1415b1dbbcaac303aeb99a85b9dd2fd8fd08b38a540013a2e3e3995b925692cf4d6d8860dc835541b9da4b2af",
+        "address": "bd710f65c0efbfcfc6b62877af22c716f3b3e25acbd5a0493a657820a9063373",
+        "balance": "100\ud83d\udd25",
+        "stake": 0
+    },
+    "Ishu": {
+        "private_key": "ed2ffb2c448a5da5dc2ea3d8c0205d41ae4440ff9a272e8f56d882e8e61f8c14",
+        "public_key": "257afad6199594425f6a8401d1be546a88293122bc30167f81797bab91746901daf03abe3e5d21362dacde72cc994ccb2de3c74d3fa22736d1487ed2d414b15b0e3c",
+        "address": "8f9fd86cbd27cc97d9f1f1405e01573a99dfe3277330b2f73635524611b26665",
+        "balance": "0\ud83d\udd25",
+        "stake": 0
+    },
+    "RR": {
+        "private_key": "b6165db658da6fc6335cdb218596c9dca5d189784ba33bad7f457b0ef4827897",
+        "public_key": "b068a831cc61e3edd8db71f8035febe7510f7b308e022d52920981387fb4c4f9205b0358dbceef582078967efc5a92e0200f9a8d325d8433023b9d35ea4442d12588",
+        "address": "47948dc143dd28183ab62644f9079cf68a019276b20c19381ac51eb4ec1fc93c",
+        "balance": "0\ud83d\udd25",
+        "stake": 0
+    },
+    "KK": {
+        "private_key": "24ee75708e80744e8f219cba939ae18a049bfac930c430610eef9611d70d208d",
+        "public_key": "2e8972581da30cb8578f3eaaced49ca2d2728a6fb2cf4d1aa279441ddfe793abb08a028d5c6191e89f01ae1cdb1eddd1d0ade8a92115b2449b3a52df5ff802ba135a",
+        "address": "6b1535d8c67a48a9e6d6a3450b5aa23fd60915baa7f8a149ae6f7209ee1917b0",
+        "balance": "0\ud83d\udd25",
+        "stake": 0
+    },
+    "Nishu": {
+        "private_key": "6f8058c289acd2cec5ec07c9a79850bfa70683e79ef3e14c8bba565789ba80a2",
+        "public_key": "995b8c09987832310493f7c01db8435bfb3db92c488e51f4e5079b1cf689ff3e965556d32cff97825059c07e80efdc01ce350984f449a351293f30ee820d3f08a8c4",
+        "address": "2905f37b7a963660678462b786bd68b9e26c52efc6715db1d2ca215da8a76f9d",
+        "balance": "99.0\ud83d\udd25",
+        "stake": 0
+    },
+    "Mantra": {
+        "private_key": "978a8efc900531e700bc3d741a9c88b3b9171af90ebf3b1c76db1c129fa480d9",
+        "public_key": "564a6210b9fe2b9804198cecb9a2638637a1d246105e6eb1a9ee706f4fb73b0488c2f3eb5ec6195cc46c43b7a8b98fa328b1755f824d890b454a18e9e3e17b6ae5c3",
+        "address": "cb455f9cb8aa128682d81f1cd82bbcd6e194b2ecaba73b7f76a236b3eec41676",
+        "balance": "495.0\ud83d\udd25",
+        "stake": 0
+    }
+}

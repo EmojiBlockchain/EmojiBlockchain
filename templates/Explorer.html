@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Emoji Blockchain Explorer 🔥</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { background-color: #121212; color: white; font-family: 'Comic Sans MS', cursive; }
+        .container { max-width: 900px; margin: auto; }
+        .block, .transaction { background: #1e1e1e; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); transition: transform 0.3s ease-in-out; }
+        .block:hover, .transaction:hover { transform: scale(1.05); }
+        .list-group-item { background: #2a2a2a; color: white; }
+        a { color: #ffcc00; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; color: #ff6600; }
+        .emoji { font-size: 1.5rem; }
+
+        #emojiBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: linear-gradient(45deg, #1e1e1e, #121212); /* Dark gradient background */
+        }
+        .emoji {
+            position: absolute;
+            opacity: 0.8;
+            animation: float 10s linear infinite, fadeOut 10s ease-in-out forwards;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0.8); }
+            100% { transform: translateY(-10vh) scale(1.2); }
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="container mt-4">
+    <div id="emojiBackground"></div>
+
+    <h1 class="text-center">🔥 Emoji Blockchain Explorer 🔥</h1>
+
+    <!-- ✅ Search Bar -->
+    <h3 class="mt-4 text-center">🔎 Search Transactions</h3>
+    <form id="searchForm" class="input-group my-3">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search by Username, Block, or Hash">
+        <button type="submit" class="btn btn-warning">🔍 Search</button>
+    </form>
+
+    <h3 class="mt-4 text-center">🔍 Search Results</h3>
+    <div id="searchResults"></div>
+
+    <!-- ✅ Latest Blocks -->
+    <h3 class="mt-4 text-center">📜 Latest Blocks</h3>
+    <div id="blocks">
+        {% for block in blockchain %}
+        <div class="block">
+            <h4>🧱 Block <a href="#" onclick="searchTransactions('{{ block.hash }}')">#{{ block.index }}</a></h4>
+            <p><b>🕒 Timestamp:</b> {{ block.timestamp }}</p>
+            <p><b>🔗 Hash:</b> <a href="#" onclick="searchTransactions('{{ block.hash }}')">{{ block.hash }}</a></p>
+            <p><b>⏮️ Previous Hash:</b> <a href="#" onclick="searchTransactions('{{ block.previous_hash }}')">{{ block.previous_hash }}</a></p>
+            <p><b>👮‍♂️ Validator:</b> 
+                {% if block.validator %}
+                    <a href="#" onclick="searchTransactions('{{ block.validator }}')">{{ block.validator }}</a>
+                {% else %}
+                    None
+                {% endif %}
+            </p>
+            <h5>💸 Transactions ({{ block.transactions|length }})</h5>
+            <ul class="list-group">
+                {% for tx in block.transactions %}
+                <li class="list-group-item">
+                    🚀 <a href="#" onclick="searchTransactions('{{ tx.sender }}')">{{ tx.sender }}</a> ➡️ 
+                    <a href="#" onclick="searchTransactions('{{ tx.receiver }}')">{{ tx.receiver }}</a> | 
+                    💰 Amount: {{ tx.amount }}🔥 | 💵 Fee: {{ tx.fee }}🔥 |
+                    <b>🔑 Tx Hash:</b> <a href="#" onclick="searchTransactions('{{ tx.tx_hash }}')">{{ tx.tx_hash }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- ✅ Pagination -->
+    <div class="mt-4 text-center">
+        {% if page > 1 %}
+        <a href="/?page={{ page - 1 }}" class="btn btn-secondary">⬅ Previous</a>
+        {% endif %}
+        <span>📄 Page {{ page }} of {{ total_pages }}</span>
+        {% if page < total_pages %}
+        <a href="/?page={{ page + 1 }}" class="btn btn-secondary">Next ➡</a>
+        {% endif %}
+    </div>
+
+    <script>
+        function searchTransactions(query = null) {
+            if (!query) {
+                query = document.getElementById("searchInput").value;
+            }
+            if (!query.trim()) {
+                alert("Please enter a valid search query.");
+                return;
+            }
+
+            fetch(`/search?q=${encodeURIComponent(query)}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Search Results:", data);
+                    let resultsDiv = document.getElementById("searchResults");
+                    resultsDiv.innerHTML = "";
+                    if (!data || data.length === 0) {
+                        resultsDiv.innerHTML = "<p>❌ No transactions found.</p>";
+                        return;
+                    }
+                    data.reverse().forEach(tx => {
+                        resultsDiv.innerHTML = `
+                            <div class='transaction'>
+                                🚀 <a href='#' onclick="searchTransactions('${tx.sender}')">${tx.sender}</a> ➡️ 
+                                <a href='#' onclick="searchTransactions('${tx.receiver}')">${tx.receiver}</a> | 
+                                💰 Amount: ${tx.amount}🔥 | 💵 Fee: ${tx.fee}🔥 |
+                                <b>🔑 Tx Hash:</b> <a href='#' onclick="searchTransactions('${tx.tx_hash}')">${tx.tx_hash}</a>
+                            </div>` + resultsDiv.innerHTML;
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching search results:", error);
+                });
+        }
+    
+
+        
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        const emojiList = ["🔥", "🚀", "💎", "🔗", "💰", "⚡", "⛓️", "📦","💵","🔑","👮‍♂️" ];
+        const background = document.getElementById("emojiBackground");
+
+        if (!background) {
+            console.error("❌ ERROR: #emojiBackground not found!");
+            return;
+        }
+
+        function createEmoji() {
+            let emoji = document.createElement("div");
+            emoji.classList.add("emoji");
+            emoji.innerText = emojiList[Math.floor(Math.random() * emojiList.length)];
+
+            // Random position & size
+            emoji.style.position = "absolute";
+            emoji.style.left = Math.random() * 100 + "vw";
+            emoji.style.bottom = "-10vh"; // Start off-screen
+            emoji.style.fontSize = Math.random() * 2 + 1.5 + "rem";
+            emoji.style.opacity = "0.8";
+
+            // Floating animation
+            emoji.animate([
+                { transform: "translateY(0)", opacity: 1 },
+                { transform: "translateY(-120vh)", opacity: 0 }
+            ], { duration: 8000, easing: "linear" });
+
+            background.appendChild(emoji);
+
+            // Remove after animation
+            setTimeout(() => emoji.remove(), 8000);
+        }
+
+        // Spawn initial emojis
+        for (let i = 0; i < 10; i++) createEmoji();
+
+        // Add new emoji every 1.5 seconds
+        setInterval(createEmoji, 1500);
+    });
+</script>
+
+    <script src="{{ url_for('static', filename='explorer_script.js') }}?v={{ time }}"></script>
+
+</body>
+</html>
