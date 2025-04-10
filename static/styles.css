@@ -1,143 +1,123 @@
 /* style.css - Mobile Friendly for Emoji DApp */
 
 :root {
-  --bg-dark: #27262c;
-  --bg-light: #e7d4ff;
-  --card-dark: #353547;
-  --card-light: #ffffff;
-  --text-dark: #ffffff;
-  --text-light: #280d5f;
-  --btn-primary: #1fc7d4;
-  --btn-hover: #1aadb9;
-  --input-bg-dark: #4b4b5a;
-  --input-bg-light: #f4f2f6;
+  --bg: #1e1e2f;
+  --card: #2a2a3d;
+  --text: #ffffff;
+  --text-muted: #b0b0c3;
+  --primary: #1fc7d4;
+  --primary-hover: #1aadb9;
+  --border-radius: 16px;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 body {
-  background: var(--bg-dark);
-  color: var(--text-dark);
-  font-family: 'Inter', sans-serif;
-  text-align: center;
-  overflow-x: hidden;
   margin: 0;
   padding: 0;
-  transition: background 0.5s, color 0.5s;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-.sidebar {
+.container {
   width: 100%;
-  background: var(--card-dark);
-  padding: 10px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Sidebar / Navigation */
+.sidebar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  position: static;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-.sidebar h2 {
-  width: 100%;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
+  background-color: var(--card);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  border-radius: 0;
+  position: relative;
+  z-index: 100;
 }
 
 .sidebar button {
-  width: auto;
-  margin: 5px;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 10px;
-  background: var(--btn-primary);
+  background-color: var(--primary);
   color: white;
-  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 8px;
   cursor: pointer;
-  transition: 0.3s;
-  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .sidebar button:hover {
-  background: var(--btn-hover);
-}
-
-.content {
-  margin: 0 auto;
-  max-width: 700px;
-  padding: 20px;
+  background-color: var(--primary-hover);
+  transform: scale(1.03);
 }
 
 .card {
-  background: var(--card-dark);
-  border-radius: 20px;
-  padding: 30px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 15px rgba(31, 199, 212, 0.4);
-  color: var(--text-dark);
+  background-color: var(--card);
+  padding: 24px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
 }
 
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(31, 199, 212, 0.6);
-}
-
-.btn-primary {
-  background: var(--btn-primary);
-  border: none;
-  padding: 10px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 10px;
-  transition: 0.3s;
-  font-size: 0.9rem;
-  box-shadow: 0 0 10px rgba(31, 199, 212, 0.7);
-}
-
-.btn-primary:hover {
-  background: var(--btn-hover);
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(31, 199, 212, 1);
+.card h2, .card h3 {
+  margin-bottom: 20px;
+  color: var(--text);
 }
 
 input {
   width: 100%;
-  text-align: center;
-  background: var(--input-bg-dark);
-  color: #ffffff;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: var(--border-radius);
   border: none;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
+  background-color: #3b3b4f;
+  color: white;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.02);
 }
 
 .toggle-theme {
-  cursor: pointer;
-  font-size: 22px;
   position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 2000;
+  top: 16px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  color: var(--primary);
 }
 
-.light-mode {
-  background: var(--bg-light);
-  color: var(--text-light);
-}
-
-.light-mode .card {
-  background: var(--card-light);
-  color: var(--text-light);
-}
-
-.light-mode input {
-  background: var(--input-bg-light);
-  color: var(--text-light);
-}
-
-/* 📱 Mobile Friendly */
+/* Responsive */
 @media (max-width: 768px) {
   .sidebar {
     flex-direction: column;
@@ -146,28 +126,20 @@ input {
 
   .sidebar button {
     width: 90%;
+    font-size: 1rem;
     margin: 6px 0;
   }
 
-  .toggle-theme {
-    font-size: 20px;
-    top: 10px;
-    right: 10px;
+  .container {
+    padding: 10px;
   }
 
   .card {
+    margin: 16px 8px;
     padding: 20px;
   }
 
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-  }
-
-  input {
-    font-size: 0.85rem;
+  input, .btn-primary {
+    font-size: 1rem;
   }
 }
