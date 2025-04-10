@@ -1,62 +1,173 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: white;
-    text-align: center;
+/* style.css - Mobile Friendly for Emoji DApp */
+
+:root {
+  --bg-dark: #27262c;
+  --bg-light: #e7d4ff;
+  --card-dark: #353547;
+  --card-light: #ffffff;
+  --text-dark: #ffffff;
+  --text-light: #280d5f;
+  --btn-primary: #1fc7d4;
+  --btn-hover: #1aadb9;
+  --input-bg-dark: #4b4b5a;
+  --input-bg-light: #f4f2f6;
 }
 
-.container {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
+body {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  transition: background 0.5s, color 0.5s;
+}
+
+.sidebar {
+  width: 100%;
+  background: var(--card-dark);
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: static;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.sidebar h2 {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.sidebar button {
+  width: auto;
+  margin: 5px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: var(--btn-primary);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.sidebar button:hover {
+  background: var(--btn-hover);
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 20px;
 }
 
 .card {
-    background: #1e1e1e;
+  background: var(--card-dark);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 15px rgba(31, 199, 212, 0.4);
+  color: var(--text-dark);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(31, 199, 212, 0.6);
+}
+
+.btn-primary {
+  background: var(--btn-primary);
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  transition: 0.3s;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px rgba(31, 199, 212, 0.7);
+}
+
+.btn-primary:hover {
+  background: var(--btn-hover);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(31, 199, 212, 1);
+}
+
+input {
+  width: 100%;
+  text-align: center;
+  background: var(--input-bg-dark);
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.toggle-theme {
+  cursor: pointer;
+  font-size: 22px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 2000;
+}
+
+.light-mode {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.light-mode .card {
+  background: var(--card-light);
+  color: var(--text-light);
+}
+
+.light-mode input {
+  background: var(--input-bg-light);
+  color: var(--text-light);
+}
+
+/* 📱 Mobile Friendly */
+@media (max-width: 768px) {
+  .sidebar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar button {
+    width: 90%;
+    margin: 6px 0;
+  }
+
+  .toggle-theme {
+    font-size: 20px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .card {
     padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
+  }
 
-input, button {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 5px;
-}
+  h1 {
+    font-size: 1.5rem;
+  }
 
-button {
-    background: #007bff;
-    color: white;
-    cursor: pointer;
-}
+  h3 {
+    font-size: 1.1rem;
+  }
 
-button:hover {
-    background: #0056b3;
-}
-
-.warning {
-    color: red;
-    font-weight: bold;
-}
-
-.hidden {
-    display: none;
-}
-.copy-btn {
-    background: #1fc7d4;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 5px;
-    font-size: 0.8rem;
-    transition: 0.3s;
-}
-
-.copy-btn:hover {
-    background: #1aadb9;
+  input {
+    font-size: 0.85rem;
+  }
 }
