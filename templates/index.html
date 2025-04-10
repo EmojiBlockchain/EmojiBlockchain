@@ -177,70 +177,80 @@
         <button onclick="showFeature('recoverWallet')">🔑 Recover Wallet</button>
     </div>
 
-    <div class="content">
-        <span class="toggle-theme" id="themeIcon" onclick="toggleTheme()">🌙</span>
+    <div class="container">
+    <span class="toggle-theme" id="themeIcon" onclick="toggleTheme()">🌙</span>
+    <h1 class="text-white my-4">🥳 Emoji Blockchain DApp 🎉</h1>
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <div id="createWallet" class="card">
+                <h3>🔑 Create a Wallet</h3>
+                <input type="text" id="username" class="form-control my-2" placeholder="Enter Username">
+                <button class="btn btn-primary w-100" onclick="createWallet()">Create</button>
+                <div id="walletResult" class="mt-3"></div>
+            </div>
 
-        <!-- Main Functional Cards -->
-        <div id="createWallet" class="card">
-            <h3>🔑 Create a Wallet</h3>
-            <input type="text" id="username" class="form-control my-2" placeholder="Enter Username" />
-            <button class="btn btn-primary w-100" onclick="createWallet()">Create</button>
-            <div id="walletResult" class="mt-3"></div>
-        </div>
-        <div id="checkBalance" class="card" style="display:none;">
-            <h3>💰 Check Balance</h3>
-            <input type="text" id="checkUsername" class="form-control my-2" placeholder="Enter Username" />
-            <button class="btn btn-primary w-100" onclick="checkBalance()">Check</button>
-            <div id="balanceResult" class="mt-3"></div>
-        </div>
-        <div id="sendTransaction" class="card" style="display:none;">
-            <h3>🚀 Send Transaction</h3>
-            <input type="text" id="sender" class="form-control my-2" placeholder="Your Username" />
-            <input type="password" id="privateKey" class="form-control my-2" placeholder="Private Key" />
-            <input type="text" id="receiver" class="form-control my-2" placeholder="Recipient Username" />
-            <input type="number" id="amount" class="form-control my-2" placeholder="Amount" />
-            <button class="btn btn-primary w-100" onclick="sendTransaction()">Send</button>
-            <div id="transactionResult" class="mt-3"></div>
-        </div>
-        <div id="stake" class="card" style="display:none;">
-            <h3>🛥️ Stake $EMOJI</h3>
-            <input type="text" id="stakeUsername" class="form-control my-2" placeholder="Enter Username" />
-            <input type="password" id="stakePrivateKey" class="form-control my-2" placeholder="Private Key" />
-            <input type="number" id="stakeAmount" class="form-control my-2" placeholder="Amount to Stake" />
-            <button class="btn btn-primary w-100" onclick="stakeEMOJI()">Stake</button>
-            <div id="stakeResult" class="mt-3"></div>
-        </div>
-        <div id="unstake" class="card" style="display:none;">
-            <h3>🪑 Unstake $EMOJI</h3>
-            <input type="text" id="unstakeUsername" class="form-control my-2" placeholder="Enter Username" />
-            <input type="password" id="unstakePrivateKey" class="form-control my-2" placeholder="Private Key" />
-            <input type="number" id="unstakeAmount" class="form-control my-2" placeholder="Amount to Unstake" />
-            <button class="btn btn-primary w-100" onclick="unstakeEMOJI()">Unstake</button>
-            <div id="unstakeResult" class="mt-3"></div>
-        </div>
-        <div id="checkStakeBalance" class="card" style="display:none;">
-            <h3>📊 Check Stake Balance</h3>
-            <input type="text" id="stakeBalanceUsername" class="form-control my-2" placeholder="Enter Username" />
-            <button class="btn btn-primary w-100" onclick="checkStakeBalance()">Check</button>
-            <div id="stakeBalanceResult" class="mt-3"></div>
-        </div>
-        <div id="findUsername" class="card" style="display:none;">
-            <h3>🔍 Find Username by Public Key</h3>
-            <input type="text" id="publicKey" class="form-control my-2" placeholder="Enter Public Key" />
-            <button class="btn btn-primary w-100" onclick="findUsername()">Find</button>
-            <div id="findUsernameResult" class="mt-3"></div>
-        </div>
-        <div id="recoverWallet" class="card" style="display:none;">
-            <h3>🔑 Recover Wallet</h3>
-            <input type="text" id="recoverUsername" class="form-control my-2" placeholder="New Username" />
-            <input type="password" id="recoverPrivateKey" class="form-control my-2" placeholder="Private Key" />
-            <button class="btn btn-primary w-100" onclick="recoverWallet()">Recover</button>
-            <div id="recoverWalletResult" class="mt-3"></div>
-        </div>
+            <div id="checkBalance" class="card d-none">
+                <h3>💰 Check Balance</h3>
+                <input type="text" id="checkUsername" class="form-control my-2" placeholder="Enter Username">
+                <button class="btn btn-primary w-100" onclick="checkBalance()">Check</button>
+                <div id="balanceResult" class="mt-3"></div>
+            </div>
 
-        <!-- Title at the bottom -->
-        <h1 class="text-white my-5">🥳 Emoji Blockchain DApp 🎉</h1>
+            <div id="sendTransaction" class="card d-none">
+                <h3>🚀 Send Transaction</h3>
+                <input type="text" id="sender" class="form-control my-2" placeholder="Your Username">
+                <input type="password" id="privateKey" class="form-control my-2" placeholder="Private Key">
+                <input type="text" id="receiver" class="form-control my-2" placeholder="Recipient Username">
+                <input type="number" id="amount" class="form-control my-2" placeholder="Amount">
+                <button class="btn btn-primary w-100" onclick="sendTransaction()">Send</button>
+                <div id="transactionResult" class="mt-3"></div>
+            </div>
+
+            <div id="stake" class="card d-none">
+                <h3>🛥️ Stake $EMOJI</h3>
+                <input type="text" id="stakeUsername" class="form-control my-2" placeholder="Enter Username">
+                <input type="password" id="stakePrivateKey" class="form-control my-2" placeholder="Private Key">
+                <input type="number" id="stakeAmount" class="form-control my-2" placeholder="Amount to Stake">
+                <button class="btn btn-primary w-100" onclick="stakeEMOJI()">Stake</button>
+                <div id="stakeResult" class="mt-3"></div>
+            </div>
+
+            <div id="unstake" class="card d-none">
+                <h3>🪑 Unstake $EMOJI</h3>
+                <input type="text" id="unstakeUsername" class="form-control my-2" placeholder="Enter Username">
+                <input type="password" id="unstakePrivateKey" class="form-control my-2" placeholder="Private Key">
+                <input type="number" id="unstakeAmount" class="form-control my-2" placeholder="Amount to Unstake">
+                <button class="btn btn-primary w-100" onclick="unstakeEMOJI()">Unstake</button>
+                <div id="unstakeResult" class="mt-3"></div>
+            </div>
+
+            <div id="checkStakeBalance" class="card d-none">
+                <h3>📊 Check Stake Balance</h3>
+                <input type="text" id="stakeBalanceUsername" class="form-control my-2" placeholder="Enter Username">
+                <button class="btn btn-primary w-100" onclick="checkStakeBalance()">Check</button>
+                <div id="stakeBalanceResult" class="mt-3"></div>
+            </div>
+
+            <div id="findUsername" class="card d-none">
+                <h3>🔍 Find Username by Public Key</h3>
+                <input type="text" id="publicKey" class="form-control my-2" placeholder="Enter Public Key">
+                <button class="btn btn-primary w-100" onclick="findUsername()">Find</button>
+                <div id="findUsernameResult" class="mt-3"></div>
+            </div>
+
+            <div id="recoverWallet" class="card d-none">
+                <h3>🔑 Recover Wallet</h3>
+                <input type="text" id="recoverUsername" class="form-control my-2" placeholder="New Username">
+                <input type="password" id="recoverPrivateKey" class="form-control my-2" placeholder="Private Key">
+                <button class="btn btn-primary w-100" onclick="recoverWallet()">Recover</button>
+                <div id="recoverWalletResult" class="mt-3"></div>
+            </div>
+        </div>
     </div>
+
+    <!-- 🥳 Page title shown at the bottom -->
+    <h1 class="text-white my-5">🥳 Emoji Blockchain DApp 🎉</h1>
+</div>
 
     <script>
         function showFeature(featureId) {
