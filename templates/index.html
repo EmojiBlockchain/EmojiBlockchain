@@ -86,7 +86,7 @@
       border-radius: 20px;
       padding: 30px 20px;
       width: 100%;
-      max-width: 400px;
+      max-width: 600px;
       margin-bottom: 20px;
       box-shadow: 0 0 15px rgba(31, 199, 212, 0.5);
       transition: transform 0.3s, box-shadow 0.3s;
@@ -270,21 +270,26 @@
   </div>
 
   <script>
-    function showFeature(featureId) {
-      document.querySelectorAll('.card').forEach(card => card.style.display = 'none');
-      document.getElementById(featureId).style.display = 'block';
-
-      // Collapse mobile menu after selection
-      const menu = document.getElementById('mobileMenu');
-      const bsCollapse = bootstrap.Collapse.getInstance(menu);
-      if (bsCollapse) bsCollapse.hide();
+  function showFeature(featureId) {
+    document.querySelectorAll('.card').forEach(card => {
+      card.classList.add('d-none');
+    });
+    const target = document.getElementById(featureId);
+    if (target) {
+      target.classList.remove('d-none');
     }
 
-    function toggleTheme() {
-      document.body.classList.toggle('light-mode');
-      document.getElementById('themeIcon').innerHTML = document.body.classList.contains('light-mode') ? '🌞' : '🌙';
-    }
-  </script>
+    // Collapse mobile menu after selection
+    const menu = document.getElementById('mobileMenu');
+    const bsCollapse = bootstrap.Collapse.getInstance(menu);
+    if (bsCollapse) bsCollapse.hide();
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle('light-mode');
+    document.getElementById('themeIcon').innerHTML = document.body.classList.contains('light-mode') ? '🌞' : '🌙';
+  }
+</script>
   <script src="static/script.js"></script>
 </body>
 </html>
