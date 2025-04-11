@@ -10,154 +10,159 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-    
-    :root {
-      --bg-dark: #27262c;
-      --bg-light: #e7d4ff;
-      --card-dark: #353547;
-      --card-light: #ffffff;
-      --text-dark: #ffffff;
-      --text-light: #280d5f;
-      --btn-primary: #1fc7d4;
-      --btn-hover: #1aadb9;
-      --input-bg-dark: #4b4b5a;
-      --input-bg-light: #f4f2f6;
-    }
 
-    body {
-      background: var(--bg-dark);
-      color: var(--text-dark);
-      font-family: 'Inter', sans-serif, system-ui;
-      text-align: center;
-      overflow-x: hidden;
-      transition: background 0.5s, color 0.5s;
-    }
+:root {
+  --bg-dark: #27262c;
+  --bg-light: #e7d4ff;
+  --card-dark: #353547;
+  --card-light: #ffffff;
+  --text-dark: #ffffff;
+  --text-light: #280d5f;
+  --btn-primary: #1fc7d4;
+  --btn-hover: #1aadb9;
+  --input-bg-dark: #4b4b5a;
+  --input-bg-light: #f4f2f6;
+}
 
-    .sidebar {
-      width: 260px;
-      height: 100vh;
-      background: var(--card-dark);
-      padding: 20px;
-      position: fixed;
-      left: 0;
-      top: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+body {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif, system-ui;
+  text-align: center;
+  overflow-x: hidden;
+  transition: background 0.5s, color 0.5s;
+}
 
-    .sidebar button {
-      width: 100%;
-      margin: 10px 0;
-      padding: 12px;
-      border: none;
-      border-radius: 12px;
-      background: var(--btn-primary);
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: var(--card-dark);
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .sidebar button:hover {
-      background: var(--btn-hover);
-    }
+.sidebar button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: var(--btn-primary);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    .content {
-      padding: 20px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.sidebar button:hover {
+  background: var(--btn-hover);
+}
 
-    @media (min-width: 768px) {
-      .content {
-        margin-left: 260px;
-      }
-    }
+.content {
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    .card {
-      background: var(--card-dark);
-      border-radius: 20px;
-      padding: 30px 20px;
-      width: 100%;
-      max-width: 600px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px rgba(31, 199, 212, 0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
-      color: var(--text-dark);
-    }
+@media (min-width: 768px) {
+  .content {
+    margin-left: 260px;
+  }
+}
 
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 20px rgba(31, 199, 212, 0.6);
-    }
+.card {
+  background: var(--card-dark);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 420px;
+  min-width: 320px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(31, 199, 212, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .btn-primary {
-      background: var(--btn-primary);
-      border: none;
-      padding: 10px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-radius: 12px;
-      transition: 0.3s;
-      box-shadow: 0 0 10px rgba(31, 199, 212, 0.8);
-      font-size: 0.9rem;
-    }
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(31, 199, 212, 0.6);
+}
 
-    .btn-primary:hover {
-      background: var(--btn-hover);
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(31, 199, 212, 1);
-    }
+.btn-primary {
+  background: var(--btn-primary);
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 12px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(31, 199, 212, 0.8);
+  font-size: 0.9rem;
+}
 
-    input {
-      text-align: center;
-      background: var(--input-bg-dark);
-      color: #ffffff;
-      border: none;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 0.9rem;
-    }
+.btn-primary:hover {
+  background: var(--btn-hover);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(31, 199, 212, 1);
+}
 
-    .toggle-theme {
-      cursor: pointer;
-      font-size: 22px;
-      position: absolute;
-      top: 15px;
-      right: 15px;
-    }
+input {
+  text-align: center;
+  background: var(--input-bg-dark);
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
 
-    .light-mode {
-      background: var(--bg-light);
-      color: var(--text-light);
-    }
+.toggle-theme {
+  cursor: pointer;
+  font-size: 22px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
 
-    .light-mode .card {
-      background: var(--card-light);
-      color: var(--text-light);
-    }
+.light-mode {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
 
-    .light-mode input {
-      background: var(--input-bg-light);
-      color: var(--text-light);
-    }
+.light-mode .card {
+  background: var(--card-light);
+  color: var(--text-light);
+}
 
-    @media (max-width: 768px) {
-      .sidebar {
-        display: none !important;
-      }
-      #mobileMenu {
-        padding-bottom: 10px;
-      }
-    }
+.light-mode input {
+  background: var(--input-bg-light);
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none !important;
+  }
+  #mobileMenu {
+    padding-bottom: 10px;
+  }
+}
+
   </style>
 </head>
 <body>
