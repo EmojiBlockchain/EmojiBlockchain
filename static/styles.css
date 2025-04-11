@@ -206,4 +206,28 @@ input {
     font-size: 1.1rem;
     padding: 16px;
   }
+  /* Light mode styles */
+body.light-mode {
+  --bg: #f5f5f5;
+  --card: #ffffff;
+  --text: #1e1e2f;
+  --text-muted: #555;
+  --primary: #1fc7d4;
+  --primary-hover: #1aadb9;
 }
+
+body.light-mode input {
+  background-color: #f0f0f0;
+  color: #1e1e2f;
+}
+
+body.light-mode .card h2,
+body.light-mode .card h3 {
+  color: var(--text);
+}
+
+body.light-mode .btn-primary {
+  color: white;
+}
+}
+
