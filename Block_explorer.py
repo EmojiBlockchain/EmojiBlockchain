@@ -3,7 +3,8 @@ from flask_socketio import SocketIO
 import json
 import os
 import time
-
+import eventlet
+eventlet.monkey_patch()
 # ✅ Use a shared directory for blockchain storage
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")  # ✅ Shared blockchain folder
@@ -117,4 +118,4 @@ def broadcast_new_block():
 
 if __name__ == "__main__":
     socketio.start_background_task(broadcast_new_block)
-    socketio.run(app, host="0.0.0.0", port=5000, debug=True)
+    socketio.run(app, host="0.0.0.0", port=5000)
