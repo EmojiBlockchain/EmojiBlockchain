@@ -1,4 +1,4 @@
-/* style.css - Mobile Friendly for Emoji DApp */
+/* style.css - Mobile + Desktop Friendly for Emoji DApp */
 
 :root {
   --bg: #1e1e2f;
@@ -117,7 +117,7 @@ input {
   color: var(--primary);
 }
 
-/* Responsive */
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .sidebar {
     flex-direction: column;
@@ -141,5 +141,23 @@ input {
 
   input, .btn-primary {
     font-size: 1rem;
+  }
+}
+
+/* PC Responsive - Larger Screens */
+@media (min-width: 1024px) {
+  .card {
+    max-width: 700px;
+    padding: 32px;
+  }
+
+  input {
+    font-size: 1.1rem;
+    padding: 14px 18px;
+  }
+
+  .btn-primary {
+    font-size: 1.1rem;
+    padding: 16px;
   }
 }
